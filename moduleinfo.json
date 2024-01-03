@@ -1,0 +1,45 @@
+{
+    "name": "Rechnung, Lieferschein, Storno als PDF",
+    "archiveName": "robinthehood/pdf-documents",
+    "sourceDir": "src",
+    "version": "auto",
+
+    "shortDescription": "Erstelle Rechnungen, Lieferscheine und Korrekturrechnungen als PDF inkl. automatischer versand per E-Mail.",
+
+    "description": "Erstelle Rechnungen, Lieferscheine und Korrekturrechnungen als PDF inkl. automatischer versand per E-Mail.",
+
+    "developer": "RobinTheHood",
+    "developerWebsite": "https://github.com/RobinTheHood/modified-pdf-documents/graphs/contributors",
+    "website": "https://github.com/RobinTheHood/modified-pdf-documents",
+
+    "category": "productivity",
+
+    "price": "free",
+
+    "require": {
+        "composer/autoload": "^1.2.1",
+        "robinthehood/modified-std-module": "^0.6.0",
+        "robinthehood/pdf-builder": "^0.1.0"
+    },
+
+    "modifiedCompatibility": [
+        "2.0.7.0",
+        "2.0.7.1",
+        "2.0.7.2",
+        "3.0.0"
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "RobinTheHood\\PdfDocuments\\": "src-mmlc"
+        }
+    },
+
+    "php": {
+        "version": "^7.4.0 || ^8.0.0"
+    },
+
+    "mmlc": {
+        "version": "^1.21.0"
+    }
+}
