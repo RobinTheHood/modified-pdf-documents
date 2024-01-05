@@ -15,13 +15,14 @@ declare(strict_types=1);
 namespace RobinTheHood\PdfDocuments\Classes\Controller;
 
 use order as Order;
+use RobinTheHood\PdfDocuments\Classes\Document\Letter;
 use RobinTheHood\PdfDocuments\Classes\Framework\AbstractController;
 use RobinTheHood\PdfDocuments\Classes\Framework\Request;
 use RobinTheHood\PdfDocuments\Classes\Framework\Response;
 
 /**
- * The AbstractController can automatically forward requests to methods beginning with the invoke prefix via the ?action=
- * query parameter in the URL. If action is empty or not set, invokeIndex() is called by default.
+ * The AbstractController can automatically forward requests to methods beginning with the invoke prefix via the
+ * ?action= query parameter in the URL. If action is empty or not set, invokeIndex() is called by default.
  * The entry point of this class is in file shop-root/rth_stripe.php
  */
 class Controller extends AbstractController
@@ -29,5 +30,15 @@ class Controller extends AbstractController
     protected function invokeIndex(Request $request): Response
     {
         return new Response('There is nothing to do');
+    }
+
+    protected function invokeDownloadInvoice(Request $request): Response
+    {
+        $orderId = $request->get('orderId');
+        $letter = new Letter();
+        $letter->use();
+        $letter->render();
+
+        return new Response($request->get('orderId'));
     }
 }

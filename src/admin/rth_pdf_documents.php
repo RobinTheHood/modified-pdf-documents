@@ -16,7 +16,9 @@ use RobinTheHood\PdfDocuments\Classes\Controller\Controller;
 use RobinTheHood\PdfDocuments\Classes\Framework\DIContainer;
 use RobinTheHood\PdfDocuments\Classes\Framework\RequestFactory;
 
+$post = $_POST;
 require 'includes/application_top.php';
+$_POST = $post;
 
 if (rth_is_module_disabled('MODULE_RTH_PDF_DOCUMENTS')) {
     return;
